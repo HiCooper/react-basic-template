@@ -99,7 +99,7 @@ export default class BasicLayout extends Component {
                             return null;
                           }
                           return (
-                            <Menu.Item key={item.path + childItem.path}>
+                            <Menu.Item key={item.path === '/' ? childItem.path : item.path + childItem.path}>
                               {childItem.icon}
                               <span>{childItem.name}</span>
                             </Menu.Item>

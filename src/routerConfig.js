@@ -11,8 +11,15 @@ import ServerError from './components/Exception/500';
 const routerConfig = [
   {
     name: '首页',
-    path: '/',
-    component: BlankPage,
+    path: '/home',
+    redirect: '/blank',
+    children: [
+      {
+        name: '空白页',
+        path: '/blank',
+        component: BlankPage,
+      },
+    ],
   },
   {
     path: '/system',
