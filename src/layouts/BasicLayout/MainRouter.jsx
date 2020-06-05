@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { routerConfig, exceptionRouterConfig } from '../../routerConfig';
 import NotFound from '../../components/Exception/404';
@@ -17,7 +17,8 @@ export default class MainRouter extends Component {
   render() {
     return (
       <Switch>
-        <Redirect exact strict from="/" to="/blank" />
+        <Redirect exact strict from="/" to="/home/blank" />
+        <Redirect exact strict from="/home" to="/home/blank" />
         {routerConfig.map(renderNormalRoute)}
         {exceptionRouterConfig.map(renderNormalRoute)}
         <Route component={NotFound} />
