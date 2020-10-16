@@ -19,8 +19,8 @@ export default class MainRouter extends Component {
       <Switch>
         <Redirect exact strict from="/" to="/home/blank" />
         <Redirect exact strict from="/home" to="/home/blank" />
-        {routerConfig.map(renderNormalRoute)}
-        {exceptionRouterConfig.map(renderNormalRoute)}
+        {renderNormalRoute(routerConfig)}
+        {renderNormalRoute(exceptionRouterConfig)}
         <Route component={NotFound} />
       </Switch>
     );

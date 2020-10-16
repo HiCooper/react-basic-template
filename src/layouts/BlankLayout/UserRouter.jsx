@@ -14,7 +14,7 @@ export default class userRouter extends Component {
   render() {
     return (
       <Switch>
-        {userRouterConfig.map(renderNormalRoute)}
+        {renderNormalRoute(userRouterConfig)}
         <Redirect exact strict from="/user/*" to="/user/login" />
       </Switch>
     );
