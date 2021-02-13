@@ -52,16 +52,6 @@ export default class Register extends Component {
     };
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.props.form.validateFieldsAndScroll((err, values) => {
-      if (!err) {
-        console.log('Received values of form: ', values);
-        this.props.history.push('/user/register-result');
-      }
-    });
-  };
-
   handleConfirmBlur = (e) => {
     const { value } = e.target;
     const { confirmDirty } = this.state;
@@ -100,7 +90,7 @@ export default class Register extends Component {
             <span className="title">{siteConfig.siteName}</span>
             <p className="desc">注册</p>
           </div>
-          <Form onFinished={this.handleSubmit} className="register-form">
+          <Form className="register-form">
             <Form.Item rule={[
               {
                 type: 'email',

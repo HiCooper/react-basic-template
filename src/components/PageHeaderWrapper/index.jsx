@@ -19,12 +19,9 @@ export default class PageHeaderWrapper extends Component {
   render() {
     const { title, content, extraContent, footer, children, className } = this.props;
     const urlHash = window.location.hash;
-    console.log(urlHash)
     const index = urlHash.indexOf('?');
     const pathname = urlHash.substr(1, index === -1 ? urlHash.length - 1 : index - 1);
-    console.log(pathname)
     const breadNames = getBreadNamesByPathname(pathname);
-    console.log(breadNames)
     let docTitle;
     if (breadNames.length === 2) {
       docTitle = `${breadNames[0]}-${breadNames[1]}`;
@@ -37,15 +34,10 @@ export default class PageHeaderWrapper extends Component {
         <div className={className ? `${className} page-header-wrapper` : 'page-header-wrapper'}>
           <div className="page-header">
             <Breadcrumb>
-              <Breadcrumb.Item key={0}>
-                <Link to="/">
-                  首页
-                </Link>
-              </Breadcrumb.Item>
               {
                 breadNames.map((item, i) => {
                   return (
-                    <Breadcrumb.Item key={i + 1}>
+                    <Breadcrumb.Item key={i}>
                       {item}
                     </Breadcrumb.Item>
                   );

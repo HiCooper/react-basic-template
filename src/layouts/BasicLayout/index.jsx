@@ -56,9 +56,11 @@ export default class BasicLayout extends Component {
     const { defaultActive, defaultOpenKey, collapsed } = this.state;
     return (
       <Layout className="basic-layout">
-        <Sider width={260}
+        <Sider
+          width={200}
           breakpoint="lg"
           trigger={null}
+          theme="light"
           collapsible
           collapsed={collapsed}
           className="menu-sider"
@@ -71,7 +73,7 @@ export default class BasicLayout extends Component {
               collapsed ? (<span>LOGO</span>) : (<span>{siteConfig.siteName}</span>)
             }
           </div>
-          <Menu theme="dark"
+          <Menu theme="light"
             mode="inline"
             defaultOpenKeys={defaultOpenKey}
             defaultSelectedKeys={[defaultActive]}

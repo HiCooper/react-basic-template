@@ -1,12 +1,12 @@
 // 左侧菜单，概览和存储 bucket 列表
-import {ClockCircleOutlined, MailOutlined, SettingOutlined, StarOutlined, UserOutlined} from '@ant-design/icons';
+import { ClockCircleOutlined, HomeOutlined, SettingOutlined, StarOutlined, UserOutlined } from '@ant-design/icons';
 import React from 'react';
 
 const sideMenuConfig = [
   {
     name: '首页',
     path: '/home',
-    icon: <MailOutlined />,
+    icon: <HomeOutlined />,
     children: [
       {
         name: '空白页',
